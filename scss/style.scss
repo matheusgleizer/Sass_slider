@@ -10,6 +10,7 @@
 	justify-content: center;
 	align-items: center;
 }
+
 // containers
 
 %about-shared {
@@ -33,6 +34,11 @@
 .slider {
 	height: 100vh;
 	overflow: hidden;
+
+	input {
+		position: absolute;
+		visibility: hidden;
+	}
 
 	.about {
 		@extend %about-shared;
@@ -61,5 +67,27 @@
 	&-5 {
 		@extend %slider-shared;
 		background: url(../img/tibet.jpg) no-repeat center / cover;
+	}
+
+	.navigation {
+		position: absolute;
+		bottom: 12rem;
+		left: 50%;
+		transform: translateX(-50%);
+		display: flex;
+
+		.bar {
+			width: 50px;
+			height: 20px;
+			border: 2px solid #fff;
+			margin: 0 1rem;
+			cursor: pointer;
+			transition: 0.4s;
+			border-radius: 30px;
+
+			&:hover {
+				background: red;
+			}
+		}
 	}
 }
